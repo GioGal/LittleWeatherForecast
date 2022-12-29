@@ -1,8 +1,8 @@
 package com.example.LittleWeatherForecast.rest;
 
 import com.example.LittleWeatherForecast.LittleWeatherForecastApplication;
-import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -193,7 +193,7 @@ public class ForecastResourceTest {
 
     @Test
     public void shouldReturnWeatherForecastForAcity() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/forecast")
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/forecast?cityName=London")
             .contentType(MediaType.APPLICATION_JSON)
             .accept(MediaType.APPLICATION_JSON))
             .andExpect(status().isOk());
